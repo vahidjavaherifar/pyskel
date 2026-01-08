@@ -1,0 +1,132 @@
+##################################################
+# 1. PYTHON RUNTIME & COMPILED FILE
+##################################################
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.pyz*
+*.so
+*.dylib
+*.dll
+
+
+##################################################
+# 2. VIRTUAL ENVIRONMENT
+##################################################
+.venv/
+venv/
+env/
+ENV/
+.pipenv/
+.conda/
+.python-version
+
+
+##################################################
+# 3. BUILD / DISTRIBUTION / PACKAGING
+##################################################
+build/
+dist/
+sdist/
+wheelhouse/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+conda-bld/
+target/
+*.spec
+*.manifest
+
+
+##################################################
+# 4. PACKAGE MANAGER
+##################################################
+# package managers
+.uv/
+.poetry/
+.hatch/
+.pdm*/
+.pipx/
+__pypackages__/
+
+
+##################################################
+# 5. TOOLING
+##################################################
+.cache/
+.pre-commit-cache/
+.mypy_cache/
+.pyright/
+.pyre/
+.ruff_cache/
+.black_cache/
+.pytest_cache/
+.tox/
+.nox/
+.ipynb_checkpoints/
+.dmypy.json
+dmypy.json
+
+
+##################################################
+# 6. COVERAGE
+##################################################
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+nosetests.xml
+
+
+##################################################
+# 7. LOG
+##################################################
+log/
+logs/
+*.log*
+pip-log.txt
+
+
+##################################################
+# 8. DATABASE
+##################################################
+*.sqlite3
+*.db
+*.db-journal
+
+
+##################################################
+# 9. DATA & ASSET
+##################################################
+node_modules/
+instance/
+.webassets-cache/
+
+
+##################################################
+# 10. ENVIRONMENT / SECRET / CREDENTIAL
+##################################################
+credentials/
+secrets/
+.env
+*.crt
+*.key
+*.p12
+*.pem
+*.pfx
+
+
+##################################################
+# 11. EDITORS, OS, TEMPORARY AND BACKUP FILE
+##################################################
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.bak
+*.tmp
+.DS_Store
+Desktop.ini
+Thumbs.db
+ehthumbs.db
