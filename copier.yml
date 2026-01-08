@@ -6,6 +6,14 @@ project_desc:
   type: str
   help: "Project Description"
 
+copyright_holder:
+  type: str
+  help: "Copyright Holder"
+
+copyright_year:
+  type: str
+  help: "Copyright Year"
+
 github_username:
   type: str
   help: "GitHub Username"
