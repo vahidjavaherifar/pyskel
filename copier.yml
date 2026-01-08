@@ -1,0 +1,15 @@
+project_name:
+  type: str
+  help: "Project Name"
+
+project_desc:
+  type: str
+  help: "Project Description"
+
+github_username:
+  type: str
+  help: "GitHub Username"
+
+github_repo:
+  type: str
+  help: "GitHub Repo"
