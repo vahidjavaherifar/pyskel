@@ -21,3 +21,15 @@ github_username:
 github_repo:
   type: str
   help: "GitHub Repo"
+
+github_default_branch:
+  type: str
+  help: "Github Default Branch"
+
+contact_coc:
+  type: str
+  help: "Code of Conduct Contact"
+
+contact_security:
+  type: str
+  help: "Security Contact"
