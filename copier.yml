@@ -6,6 +6,10 @@ project_desc:
   type: str
   help: "Project Description"
 
+project_init_ver:
+  type: str
+  help: "Project Initial Version"
+
 copyright_holder:
   type: str
   help: "Copyright Holder"
