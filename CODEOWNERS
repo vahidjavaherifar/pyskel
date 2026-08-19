@@ -1,0 +1,430 @@
+# ==================================================================================================
+# CODEOWNERS
+# ==================================================================================================
+# Syntax: <pattern> <owner1> [<owner2> ...]
+#
+# RULES & GUIDELINES:
+# 1. Top-to-bottom evaluation: The LAST matching rule takes precedence.
+# 2. Replace '@org/' with your actual Git Organization/Group (e.g., @my-org/).
+# 3. Assigned owners MUST have explicit WRITE/MAINTAIN access to this repository.
+#
+# STANDARD TEAM & RESPONSIBILITIES MAPPING:
+# - @org/tech-leads       : System Architects & Principal Engineers
+# - @org/core-maintainers : Repository Owners & Primary Code Maintainers
+# - @org/backend-team     : Backend, API & Core Domain Engineers
+# - @org/frontend-team    : Web, UI/UX & Client Applications
+# - @org/devops-team      : Platform, SRE, IaC & CI/CD Engineers
+# - @org/security-team    : Security, Auth, Crypto & Compliance Engineers
+# - @org/data-team        : Data Engineers, ML & Analytics Specialists
+# ==================================================================================================
+
+# --------------------------------------------------------------------------------------------------
+# 1. GLOBAL DEFAULT OWNERS (CATCH-ALL)
+# --------------------------------------------------------------------------------------------------
+# Default fallback rule for all files in the repository.
+# Matches any path not explicitly overridden by more specific patterns below.
+#
+*                                       @org/core-maintainers @org/tech-leads
+
+# --------------------------------------------------------------------------------------------------
+# 2. PROJECT DOCUMENTATION, GOVERNANCE & ARCHITECTURE
+# --------------------------------------------------------------------------------------------------
+# Community standards, governance and legal policies, security guidelines, AI agent directives,
+# architectural decision records (ADRs), and project operational guides.
+#
+
+# AI Agent Directives, Prompt Contexts & LLM System Rules
+.cursorrules                            @org/core-maintainers @org/tech-leads
+AGENTS*                                 @org/core-maintainers @org/tech-leads
+CLAUDE.md                               @org/core-maintainers @org/tech-leads
+
+# Governance, Legal Frameworks, Licensing & Security Policies
+CODE_OF_CONDUCT*                        @org/core-maintainers
+CONTRIBUTING*                           @org/core-maintainers
+GOVERNANCE*                             @org/core-maintainers
+LICENSE*                                @org/core-maintainers
+SECURITY*                               @org/core-maintainers @org/security-team
+
+# General Documentation, Changelogs & Community Guides
+CHANGELOG*                              @org/core-maintainers
+DEVELOPERS*                             @org/core-maintainers
+docs/                                   @org/core-maintainers
+FAQ*                                    @org/core-maintainers
+MILESTONES*                             @org/core-maintainers
+README*                                 @org/core-maintainers
+SUPPORT*                                @org/core-maintainers
+TODO*                                   @org/core-maintainers
+TROUBLESHOOTING*                        @org/core-maintainers
+
+# Architecture Specifications & Architectural Decision Records (ADRs)
+ARCHITECTURE*                           @org/tech-leads
+docs/adr/                               @org/tech-leads
+docs/architecture/                      @org/tech-leads
+
+# --------------------------------------------------------------------------------------------------
+# 3. REPOSITORY INFRASTRUCTURE, CI/CD & IDE CONFIGURATIONS
+# --------------------------------------------------------------------------------------------------
+# Automation workflows, CI/CD pipelines, issue and PR templates, git hooks, container settings, and
+# shared editor/IDE environments.
+#
+
+# Shared IDE Environments, Editor Configurations & AI Workspaces
+.claude/                                    @org/core-maintainers
+.cursor/                                    @org/core-maintainers
+.devcontainer/                              @org/core-maintainers @org/devops-team
+.editorconfig                               @org/core-maintainers
+.idea/                                      @org/core-maintainers
+.vscode/                                    @org/core-maintainers
+
+# Git Configuration, Version Control Rules & Commit Hooks
+.gitattributes                              @org/core-maintainers
+.gitignore                                  @org/core-maintainers
+.husky/                                     @org/core-maintainers
+.pre-commit-config.yaml                     @org/core-maintainers
+
+# CI/CD Pipelines, Repository Automation & Issue/PR Templates
+.github/                                    @org/core-maintainers
+.github/workflows/                          @org/devops-team
+.gitlab/                                    @org/core-maintainers
+.gitlab-ci.yml                              @org/devops-team
+
+# --------------------------------------------------------------------------------------------------
+# 4. CODE QUALITY, LINTERS, FORMATTERS & STATIC ANALYSIS
+# --------------------------------------------------------------------------------------------------
+# Configuration files for static analysis tools, code style enforcers, linters, automatic
+# formatters, and type checkers.
+#
+
+# General, Multi-Language & Markup Linters / Formatters
+.biome.json                                 @org/core-maintainers
+.markdownlint*                              @org/core-maintainers
+.prettierignore                             @org/core-maintainers
+.prettierrc*                                @org/core-maintainers
+.stylelintrc*                               @org/core-maintainers
+
+# Python Linters, Formatters, Type Checkers & Test Runners
+.flake8                                     @org/core-maintainers
+.isort.cfg                                  @org/core-maintainers
+.mypy.ini                                   @org/core-maintainers
+.pylintrc                                   @org/core-maintainers
+.ruff.toml                                  @org/core-maintainers
+mypy.ini                                    @org/core-maintainers
+pyrightconfig.json                          @org/core-maintainers
+ruff.toml                                   @org/core-maintainers
+tox.ini                                     @org/core-maintainers
+
+# JavaScript, TypeScript & Frontend Tooling
+.eslintrc*                                  @org/core-maintainers
+deno.json*                                  @org/core-maintainers
+eslint.config.*                             @org/core-maintainers
+tslint.json                                 @org/core-maintainers
+
+# Rust Tooling & Static Analysis
+.clippy.toml                                @org/core-maintainers
+clippy.toml                                 @org/core-maintainers
+rustfmt.toml                                @org/core-maintainers
+
+# Other Languages & Ecosystem Tooling
+.golangci*                                  @org/core-maintainers
+.scalafmt.conf                              @org/core-maintainers
+golangci.yml                                @org/core-maintainers
+
+# ==================================================================================================
+# 5. BUILD SYSTEMS, PACKAGE MANIFESTS & DEPENDENCY LOCKFILES
+# ==================================================================================================
+# Manifests, build scripts, lockfiles, and package manager configurations for all supported
+# ecosystems.
+#
+
+# C / C++ / Build Utilities
+*.mk                                    @org/core-maintainers
+CMakeLists.txt                          @org/core-maintainers
+Makefile                                @org/core-maintainers
+
+# Go
+go.mod                                  @org/core-maintainers
+go.sum                                  @org/core-maintainers
+
+# Java / Kotlin / Gradle
+build.gradle*                           @org/core-maintainers
+pom.xml                                 @org/core-maintainers
+
+# JavaScript / TypeScript / Node.js / Bun
+bun.lock                                @org/core-maintainers
+bun.lockb                               @org/core-maintainers
+package-lock.json                       @org/core-maintainers
+package.json                            @org/core-maintainers
+pnpm-lock.yaml                          @org/core-maintainers
+tsconfig*.json                          @org/core-maintainers
+yarn.lock                               @org/core-maintainers
+
+# Other Languages
+composer.json                           @org/core-maintainers
+composer.lock                           @org/core-maintainers
+Gemfile*                                @org/core-maintainers
+mix.exs                                 @org/core-maintainers
+Package.swift                           @org/core-maintainers
+
+# Python & Multi-Language Package Managers
+environment.yml                         @org/core-maintainers
+Pipfile*                                @org/core-maintainers
+pixi.lock                               @org/core-maintainers
+poetry.lock                             @org/core-maintainers
+pyproject.toml                          @org/core-maintainers
+requirements*.txt                       @org/core-maintainers
+setup.cfg                               @org/core-maintainers
+setup.py                                @org/core-maintainers
+uv.lock                                 @org/core-maintainers
+
+# Rust
+Cargo.lock                              @org/core-maintainers
+Cargo.toml                              @org/core-maintainers
+
+# .NET / C#
+*.csproj                                @org/core-maintainers
+*.sln                                   @org/core-maintainers
+
+# ==================================================================================================
+# 6. INFRASTRUCTURE, CLOUD, ORCHESTRATION & DEPLOYMENT
+# ==================================================================================================
+# Infrastructure as Code (IaC), Containerization, Kubernetes/Helm manifests, Configuration
+# Management, and Deployment Scripts.
+#
+
+# Containers & Docker Ecosystem
+.dockerignore                           @org/devops-team
+compose*.yaml                           @org/devops-team
+compose*.yml                            @org/devops-team
+Containerfile*                          @org/devops-team
+docker-compose*.yaml                    @org/devops-team
+docker-compose*.yml                     @org/devops-team
+Dockerfile*                             @org/devops-team
+
+# Infrastructure as Code
+*.tf                                    @org/devops-team
+*.tfstate*                              @org/devops-team
+*.tfvars                                @org/devops-team
+cloudformation/                         @org/devops-team
+Pulumi*.yaml                            @org/devops-team
+terraform/                              @org/devops-team
+tofu/                                   @org/devops-team
+
+# Orchestration & Service Mesh
+charts/                                 @org/devops-team
+helm/                                   @org/devops-team
+k8s/                                    @org/devops-team
+kube/                                   @org/devops-team
+kubernetes/                             @org/devops-team
+nomad/                                  @org/devops-team
+
+# Configuration Management & Provisioning
+ansible/                                @org/devops-team
+Packerfile                              @org/devops-team
+playbooks/                              @org/devops-team
+Vagrantfile                             @org/devops-team
+
+# Deployment Directories & Environments
+deploy/                                 @org/devops-team
+deployments/                            @org/devops-team
+infra/                                  @org/devops-team
+infrastructure/                         @org/devops-team
+
+# System & Deployment Scripts
+*.ps1                                   @org/devops-team @org/core-maintainers
+*.sh                                    @org/devops-team @org/core-maintainers
+scripts/                                @org/devops-team @org/core-maintainers
+
+# ==================================================================================================
+# 7. OBSERVABILITY, LOGGING, MONITORING & TELEMETRY
+# ==================================================================================================
+# Metrics collection, distributed tracing, log aggregation, dashboard configurations, and
+# APM/Telemetry specifications.
+#
+
+# Dashboards, Visualization & APM Configurations
+*.dashboard.json                        @org/devops-team @org/frontend-team
+datadog/                                @org/devops-team
+grafana/                                @org/devops-team
+kibana/                                 @org/devops-team
+newrelic.ini                            @org/devops-team @org/backend-team
+
+# Distributed Tracing, Telemetry & APM Protocols
+jaeger/                                 @org/devops-team @org/backend-team
+opentelemetry/                          @org/devops-team @org/backend-team
+otel/                                   @org/devops-team @org/backend-team
+telemetry/                              @org/devops-team @org/backend-team
+tracing/                                @org/devops-team @org/backend-team
+
+# Log Aggregation & Pipeline Collectors
+fluentd/                                @org/devops-team
+logstash/                               @org/devops-team
+vector/                                 @org/devops-team
+
+# Metrics Infrastructure & Monitoring Specifications
+metrics/                                @org/devops-team @org/backend-team
+monitoring/                             @org/devops-team
+observability/                          @org/devops-team
+prometheus/                             @org/devops-team
+
+# ==================================================================================================
+# 8. SECURITY, AUTHENTICATION & COMPLIANCE
+# ==================================================================================================
+# Cryptographic modules, identity management, access control policies, TLS certificates, and
+# security compliance specifications.
+#
+
+# Authentication & Access Control
+auth/                                   @org/security-team @org/backend-team
+authentication/                         @org/security-team @org/backend-team
+authorization/                          @org/security-team @org/backend-team
+identity/                               @org/security-team @org/backend-team
+oauth/                                  @org/security-team @org/backend-team
+permissions/                            @org/security-team @org/backend-team
+rbac/                                   @org/security-team @org/backend-team
+sso/                                    @org/security-team @org/backend-team
+
+# Cryptography, Keys & Secrets Management
+*.p12                                   @org/security-team @org/devops-team
+*.pem                                   @org/security-team @org/devops-team
+certs/                                  @org/security-team @org/devops-team
+crypto/                                 @org/security-team
+cryptography/                           @org/security-team
+keys/                                   @org/security-team @org/devops-team
+pki/                                    @org/security-team @org/devops-team
+secrets/                                @org/security-team @org/devops-team
+tls/                                    @org/security-team @org/devops-team
+vault/                                  @org/security-team @org/devops-team
+
+# Security Policies, Audit & Compliance
+audit/                                  @org/security-team
+compliance/                             @org/security-team
+iam/                                    @org/security-team
+policies/                               @org/security-team
+policy/                                 @org/security-team
+security/                               @org/security-team
+
+# ==================================================================================================
+# 9. FRONTEND, UI COMPONENTS & STATIC ASSETS
+# ==================================================================================================
+# User interfaces, web applications, design systems, styling, and public static assets.
+#
+
+# Applications, Views & Page Layouts
+app/                                    @org/frontend-team
+apps/web/                               @org/frontend-team
+frontend/                               @org/frontend-team
+pages/                                  @org/frontend-team
+views/                                  @org/frontend-team
+web/                                    @org/frontend-team
+
+# Components, Design System & UI Logic
+components/                             @org/frontend-team
+hooks/                                  @org/frontend-team
+layouts/                                @org/frontend-team
+stories/                                @org/frontend-team
+ui/                                     @org/frontend-team
+widgets/                                @org/frontend-team
+
+# Static Assets, Public Files & Media
+assets/                                 @org/frontend-team
+icons/                                  @org/frontend-team
+images/                                 @org/frontend-team
+media/                                  @org/frontend-team
+public/                                 @org/frontend-team
+static/                                 @org/frontend-team
+
+# Styling, Themes & CSS Frameworks
+css/                                    @org/frontend-team
+styles/                                 @org/frontend-team
+styling/                                @org/frontend-team
+theme/                                  @org/frontend-team
+themes/                                 @org/frontend-team
+
+# ==================================================================================================
+# 10. CORE SOURCE CODE, DOMAIN LOGIC & DATA ENGINEERING
+# ==================================================================================================
+# Monorepo structures, microservices, application layouts, core domain logic, and data pipelines.
+#
+
+# Core Architecture, Domain Logic & Shared Libraries
+api/                                    @org/backend-team
+core/                                   @org/tech-leads
+domain/                                 @org/backend-team
+lib/                                    @org/backend-team
+modules/                                @org/backend-team
+pkg/                                    @org/backend-team
+
+# Data Engineering, Databases & Migrations
+data/                                   @org/backend-team @org/data-team
+database/                               @org/backend-team
+db/                                     @org/backend-team
+dbt/                                    @org/data-team
+etl/                                    @org/data-team
+migrations/                             @org/backend-team
+pipelines/                              @org/data-team
+sql/                                    @org/backend-team
+
+# Monorepos, Applications & Microservices Layouts
+app/                                    @org/backend-team
+apps/                                   @org/backend-team
+cmd/                                    @org/backend-team
+packages/                               @org/backend-team
+services/                               @org/backend-team
+src/                                    @org/backend-team
+
+# ==================================================================================================
+# 11. DATA ENGINEERING, MACHINE LEARNING & ANALYTICS
+# ==================================================================================================
+# Data pipelines, ETL workflows, feature stores, ML models, analytics notebooks, and MLOps assets.
+#
+
+# Analytics, BI & Data Visualization
+analytics/                              @org/data-team
+bi/                                     @org/data-team
+dashboards/data/                        @org/data-team
+
+# Data Engineering, Feature Stores & Pipeline Orchestration
+dbt/                                    @org/data-team
+etl/                                    @org/data-team
+features/                               @org/data-team
+pipelines/                              @org/data-team @org/backend-team
+
+# Data Governance, Datasets & Schemas
+data/                                   @org/data-team @org/backend-team
+datasets/                               @org/data-team
+schemas/data/                           @org/data-team
+
+# Exploratory Analysis & Research Notebooks
+experiments/                            @org/data-team
+notebooks/                              @org/data-team
+research/                               @org/data-team
+
+# Machine Learning Models, MLOps & Training Assets
+artifacts/                              @org/data-team
+ml/                                     @org/data-team
+mlops/                                  @org/data-team
+models/ml/                              @org/data-team
+training/                               @org/data-team
+
+# ==================================================================================================
+# 12. QUALITY ASSURANCE, TESTING, SPECIFICATIONS & BENCHMARKS
+# ==================================================================================================
+# Unit tests, integration tests, E2E suites, performance benchmarks, and test fixtures.
+#
+
+# End-to-End, Integration & Acceptance Testing
+cypress/                                @org/frontend-team
+e2e/                                    @org/tech-leads @org/frontend-team
+integration/                            @org/tech-leads @org/backend-team 
+
+# Performance Benchmarks & Load Testing
+benches/                                @org/tech-leads
+benchmarks/                             @org/tech-leads
+load/                                   @org/tech-leads @org/devops-team
+
+# Unit Testing, Test Fixtures & Specifications
+fixtures/                               @org/tech-leads
+mocks/                                  @org/tech-leads
+spec/                                   @org/tech-leads
+test/                                   @org/tech-leads
+tests/                                  @org/tech-leads
