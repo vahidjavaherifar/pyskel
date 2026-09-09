@@ -1,0 +1,74 @@
+name: "Feature Request"
+description: "Suggest a new feature or improvement for this project."
+title: "[FEAT]: "
+labels:
+  - "type:feature"
+  - "status:triage"
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to suggest a feature!
+
+        Please provide enough context to help us understand and evaluate the request.
+        Ensure all sensitive credentials, tokens, or private details are redacted before submitting.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Problem / Motivation"
+      description: "Describe the problem, limitation, or need that this feature addresses."
+      placeholder: "Describe what currently limits your workflow or what gap exists..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: use_case
+    attributes:
+      label: "Use Case"
+      description: "Describe how this feature would be used and who benefits from it."
+      placeholder: "Explain who needs this capability and in what scenario..."
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: "Proposed Solution"
+      description: "Describe the desired feature, behavior, or outcome without requiring a specific implementation."
+      placeholder: "Describe the desired capability, behavior, outcome, or change..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "Alternative Solutions"
+      description: "Describe any alternative solutions, approaches, or features you have considered."
+      placeholder: "Mention any workarounds or alternative approaches considered..."
+
+  - type: dropdown
+    id: breaking_change
+    attributes:
+      label: "Breaking Change"
+      description: "Would this feature introduce breaking changes to existing functionality or interfaces?"
+      options:
+        - "No (Backward compatible)"
+        - "Yes (Introduces breaking changes)"
+        - "Unsure / Needs investigation"
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: "Additional Context"
+      description: "Provide any other relevant details, code snippets, diagrams, or related references."
+      placeholder: "Any additional details, code snippets, diagrams, or references..."
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: "Confirmation"
+      options:
+        - label: "I have searched existing issues and confirmed that this feature has not already been requested."
+          required: true
