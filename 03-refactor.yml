@@ -1,0 +1,82 @@
+name: "Code Refactor"
+description: "Propose internal code restructuring without intentionally changing externally observable behavior."
+title: "[REFACTOR]: "
+labels:
+  - "type:refactor"
+  - "status:triage"
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to propose a refactoring!
+
+        Refactoring tasks help maintain project health, reduce technical debt, and improve code quality.
+        Please ensure that the proposed changes preserve the project's existing externally observable behavior.
+        Please provide enough context to help us understand and evaluate the proposed changes.
+        Ensure all sensitive credentials, tokens, or private details are redacted before submitting.
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: "Scope"
+      description: "Identify the parts of the project that should be refactored."
+      placeholder: "Specify the areas, components, or systems affected..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: "Motivation & Rationale"
+      description: "Explain why the refactoring is needed and what problem, complexity, technical debt, or maintainability concern it addresses."
+      placeholder: "Describe the existing complexity, technical debt, maintainability issues, or other concerns..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: plan
+    attributes:
+      label: "Proposed Changes"
+      description: "Describe the changes you propose to improve or restructure the affected areas."
+      placeholder: "Describe the proposed changes, restructuring, simplifications, or cleanup..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: "Expected Impact"
+      description: "Describe the expected benefits for maintainability, performance, reliability, testability, developer experience, or other relevant areas."
+      placeholder: "Describe the anticipated improvements or benefits..."
+
+  - type: dropdown
+    id: regression_risk
+    attributes:
+      label: "Regression Risk"
+      description: "Assess the risk of introducing unintended regressions or compatibility issues."
+      options:
+        - "Low (Small or isolated changes)"
+        - "Medium (Changes affect multiple or shared areas)"
+        - "High (Broad, complex, or high-impact changes)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: "Additional Context"
+      description: "Add any other relevant details, diagrams, benchmarks, related references."
+      placeholder: "Any additional details, diagrams, benchmarks, issues, PRs, or other references..."
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: "Confirmation"
+      options:
+        - label: "I have searched existing issues and confirmed that this refactoring has not already been proposed."
+          required: true
+        - label: "I have confirmed that this refactoring preserves existing externally observable behavior."
+          required: true
+        - label: "I will update or add automated tests to prevent regressions."
+          required: true
