@@ -1,0 +1,56 @@
+name: "Documentation Request"
+description: "Report missing, inaccurate, unclear, or outdated documentation."
+title: "[DOCS]: "
+labels:
+  - "type:docs"
+  - "status:triage"
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to help improve our documentation!
+
+        Documentation issues help keep project information accurate, clear, and up to date.
+        Please provide enough context to help us understand and address the issue.
+        Ensure all sensitive credentials, tokens, or private details are redacted before submitting.
+
+  - type: input
+    id: location
+    attributes:
+      label: "Documentation Location"
+      description: "Identify where the documentation issue occurs, such as a file, section, page, or URL."
+      placeholder: "Specify the file, section, page, URL, or other relevant location..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue_description
+    attributes:
+      label: "Issue Description"
+      description: "Explain what is missing, inaccurate, unclear, outdated, or otherwise problematic."
+      placeholder: "Describe what is missing, incorrect, unclear, or outdated..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_change
+    attributes:
+      label: "Suggested Improvements"
+      description: "Describe the changes you suggest, including proposed text or structure if applicable."
+      placeholder: "Describe the suggested changes or provide updated content..."
+
+  - type: textarea
+    id: context
+    attributes:
+      label: "Additional Context"
+      description: "Provide any other relevant details, examples, diagrams, or related references."
+      placeholder: "Provide any additional details, examples, diagrams, references, or related issues..."
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: "Confirmation"
+      options:
+        - label: "I have searched existing issues and confirmed that this documentation issue has not already been reported."
+          required: true
