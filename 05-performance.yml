@@ -1,0 +1,73 @@
+name: "Performance Optimization"
+description: "Report a performance problem or suggest an optimization."
+title: "[PERF]: "
+labels:
+  - "type:performance"
+  - "status:triage"
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to help improve performance!
+
+        Performance issues and optimization proposals help improve performance, efficiency, scalability, and resource usage.
+        Please provide enough context to help us evaluate the performance issue or proposed change.
+        Ensure all sensitive credentials, tokens, or private details are redacted before submitting.
+
+  - type: textarea
+    id: bottleneck
+    attributes:
+      label: "Performance Issue / Bottleneck"
+      description: "Describe the performance problem, inefficiency, resource usage, or scalability limitation."
+      placeholder: "Describe the current bottleneck, slowdown, high latency, resource usage, or other performance symptoms..."
+    validations:
+      required: true
+
+  - type: input
+    id: target
+    attributes:
+      label: "Affected Area"
+      description: "Identify the part of the project where the performance issue or optimization applies."
+      placeholder: "Specify the function, component, service, endpoint, workflow, or other relevant area..."
+
+  - type: textarea
+    id: metrics
+    attributes:
+      label: "Current Metrics & Benchmarks"
+      description: "Provide any measurements such as execution time, latency, throughput, CPU or memory usage, profiling data, or benchmarks."
+      placeholder: "Provide relevant metrics, profiling data, benchmark results, or other measurements..."
+
+  - type: textarea
+    id: optimization
+    attributes:
+      label: "Suggested Optimization"
+      description: "Describe the proposed changes, techniques, or approaches to improve performance or resource efficiency."
+      placeholder: "Describe the suggested optimization, algorithmic changes, caching strategy, code refactoring, or other approach..."
+
+  - type: dropdown
+    id: expected_impact
+    attributes:
+      label: "Expected Impact"
+      description: "Estimate the expected performance improvement or resource savings."
+      options:
+        - "Minor (Small improvement with limited impact)"
+        - "Moderate (Noticeable improvement in performance or resource efficiency)"
+        - "Major (Significant improvement that addresses a critical bottleneck or scalability limitation)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: "Additional Context"
+      description: "Provide any other relevant details, test conditions, workloads, environment information, references, or related issues."
+      placeholder: "Provide any additional details, benchmark scripts, workload specifications, references, or related issues..."
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: "Confirmation"
+      options:
+        - label: "I have searched existing issues and confirmed that this performance issue or optimization has not already been reported or proposed."
+          required: true
